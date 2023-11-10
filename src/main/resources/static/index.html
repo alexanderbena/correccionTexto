@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="author" content="Alexander Benavides Mora">
+	<meta name="keywords" content="templates, formatos, HTML, Java Script, costa rica">
+	<title>Templates</title>
+	<style>
+	body {background-color: lightblue;}
+	h3 {color: blue;}
+	label {color: blue;}
+	textarea {height:100%;width: 95%;background-color: aliceblue;}
+	</style>
+</head>
+<body>
+
+<form>
+
+<input type="button" onclick="clearFields()" value="Limpiar Texto">
+<input type="button" onclick="getFields()" value="Copiar Texto">
+<table style="width:100%;height:100%">
+<tbody>
+<tr>
+	<th>
+		<label for="texbox1"><h3>Area de Texto:</h3></label><textarea id="texbox1" name="message"></textarea>
+	</th>
+	<th style="width:30%;height:75%;text-align: left;"> 
+		
+		
+	
+		<table style="text-align:left;height:100%;width: 100%;">
+			<tbody>
+				<tr>
+					<th>
+					<h3>Comandos</h3>
+					</th>
+					<th>
+					<h3>Descripción</h3>
+					</th>
+				</tr> 
+
+				<tr>
+					<tr><td>!saludoingles</td><td>Scoping in english with greeting for VCDA</td></tr>
+					<tr><td>!saludoport</td><td>Saludo inicial en portugues</td></tr>					
+					<tr><td>!intupdate</td><td>Internal UPdate</td></tr>
+					<tr><td>!encuestaesp</td><td>Descripción de encuesta en español</td></tr>
+					<tr><td></td><td></td></tr>
+					<tr style="height:270px"><td></td><td></td></tr>
+					<tr><td><p id="demo"></p></td></tr>
+					
+				</tr>
+			</tbody>
+		</table>
+
+
+	</th>
+</tr>
+<tr>
+   
+</tr>
+</tbody>
+</table>
+
+
+<script type="text/javascript">
+function clearFields() {
+    document.getElementById("texbox1").value=""	
+}
+</script>
+
+<script type="text/javascript">
+function getFields(){
+var content = document.getElementById('texbox1');
+content.select();
+document.execCommand('copy');
+alert("Datos copiados en el portapapeles")
+}
+</script>
+
+<script>
+setInterval(myTimer, 1000);
+
+function myTimer() {
+  const d = new Date();
+  document.getElementById("demo").innerHTML = d.toLocaleTimeString();
+}
+</script>
+
+</form>
+</body>
+</html>
